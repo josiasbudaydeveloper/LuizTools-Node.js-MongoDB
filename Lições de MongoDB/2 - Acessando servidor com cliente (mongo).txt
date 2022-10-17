@@ -1,0 +1,59 @@
+Seguindo o ambiente de desenvolvimento explicado no arquivo anterior:
+
+Na pasta onde o MongoDB se encontra, na pasta /bin, executar o seguinte comando (Powershell, Linux ou 
+MacOS):
+  ./mongo
+
+Obs.: ao se executar o mongo sem nenhum parâmetro (senha, host, porta e banco) ele vai buscar por padrão
+um servidor:
+  - sem senha
+  - host: localhost
+  - porta: 27017
+
+----------- Listando bases de dados: ----------- 
+  - show databases
+
+Se conectando a uma base de dados: 
+   - use <db_name>
+obs.: caso seja digitado um banco de dados inexistente e seja feita alguma inserção, o mesmo será criado
+
+----------- Criando base de dados: ----------- 
+   - use <new_db_name>
+   - db.<collection>.insert({<json>}) // uma base de dados é criada no momento em que um dado é inserido 
+   numa coleção
+
+----------- Inserindo dados: ----------- 
+   - db.<collection>.inser({json})
+obs.: o MongoDB cria automaticamente uma chave primária "_id" com um "ObjectId(<hash>)" para diferenciar
+os documentos.
+obs.: o comando de inserção também permite a criação de dados através de 
+arrays de objetos: db.<collection>.insert([<{json}>,<{json}>)
+
+----------- Listando dados: ----------- 
+   - db.<collection>.find() // lista a coleção
+   - db.<collection>.find().pretty() // lista a coleção de forma identada
+find.skip(<valor>) // pula o número de resultados especificados
+find.limit(<valor>) // limita o número de resultados retornados
+find.sort({<padrão>}) // ordena os retornos de acordo com os campos especificados no objeto JSON
+Obs.: o padrão do método sort é {chave: <valor>}, cujo valor pode ser 1 (crescente) ou -1 (decrescente)
+
+Ex:
+find().skip(1).limit(5).sort({age: 1}.pretty()
+
+----------- Pesquisando dados: ----------- 
+   - db.<collection>.find({json}).pretty()
+Ex: db.familia.find({posicao: "pai"}).pretty()
+Obs.: como o MongoDB é case sensitive, é possível utilizar um truque (expressões regulares)
+para efetuar uma pesquisa com case insensitive:
+Ex: db.familia.find({posicao: /PaI/i}).pretty() // retorna uma busca em case insensitive
+
+----------- Atualizando dados (substituindo o documento inteiro): ----------- 
+  - db.<colection>.update(<filter>,<{new_document}>);
+
+Ex:
+db.funcionarios.update({profissao: "Analista de Sistemas"}, {salario: 4500})
+
+----------- Removendo dados ----------- 
+  - db.<collection>.remove(<filter>)
+Ex:
+db.funcionarios.remove({idade: 75})

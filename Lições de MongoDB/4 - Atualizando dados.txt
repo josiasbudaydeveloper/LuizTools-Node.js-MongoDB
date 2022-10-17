@@ -1,0 +1,26 @@
+----------- Atualizando dados (substituindo o documento inteiro): ----------- 
+  - db.<colection>.update(<filter>,<{new_document}>);
+
+----------- Atualizando dados (substituindo apenas alguns valores): -----------
+  - db.<collection>.updateOne(<filter>,{<operador>: {<novos_valores>}})
+Obs.: o operador pode ser $set ou $unset
+$set - redefine ou cria os campos especificados
+$unset - exclui os campos especificados (se existirem)
+Ex:
+  db.collection.updateOne({_id: ObjectId("62c4f089b7d6863974cd53f9")}, {$set: {nome: "João"}) // definindo o nome 
+  para João
+  db.collection({_id: ObjectId("62c4f089b7d6863974cd53f9")}, {$unset: {nome: null}) // excluindo o nome
+Obs.: o valor especificado no campo do $unset pode ser qualquer um. O "null" é só para facilitar.
+
+// Operações matemáticas devem ser feitas pelo próprio banco de dados, pois o mesmo é muito rápido e pode 
+// gerar dessincronização entre a aplicação e o MongoDB
+$inc - incrementa o valor // obs.: não há função de decremento, simplesmente usar -
+$mul - multiplica o valor // obs.: não há função de divisão, simplesmente usar 1/x (multiplicar por fração)
+$rename - modifica o nome de um campo
+
+----------- Atualizar e inserir ao mesmo tempo -----------
+Caso não exista um registro pesquisado em update, basta adicionar como terceiro parâmetro um {upsert: true}
+Ex:
+  db.collection.update({nome: "Josias", {<novo documento}, {upsert: true}) 
+// caso não exista um documento com o nome: "Josias", ele irá criá-lo automaticamente.
+// operações de update e insertOne com o {upsert: true} retornam o id do documento gerado

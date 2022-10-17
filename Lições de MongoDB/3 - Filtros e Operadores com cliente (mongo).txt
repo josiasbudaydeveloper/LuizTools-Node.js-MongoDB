@@ -1,0 +1,62 @@
+Os filtros são objetos JSON, que podem utilizar-se de expressões regulares para potencializar as 
+pesquisas.
+
+Os operadores do MongoDB começam com o cifrão/dollar $.
+
+Buscando todos os textos que contenham um determinado valor em um documento, {$regex /<valor_buscado>/}
+Ex:
+  db.collection.find({nome: {$regex: /a/i}}).pretty() 
+// buscando todos os registros que contenham a letra a no campo nome
+
+
+--------- Operadores de Comparação--------- 
+=
+$eq (equal)
+
+!=
+$ne (not equal)
+
+>
+$gt (greater than)
+
+<
+$lt (less than)
+
+>=
+$gte (greater than equal)
+
+<=
+$lte (less than equal)
+
+IN
+$in
+
+NOT IN
+$nin
+
+ALL (todos os elementos em um array)
+$all
+
+
+--------- Operadores Lógicos --------- 
+$and // retorna verdadeiro se todas as expressões forem verdadeiras
+Ex:
+db.inventory.find( { $and: [ { price: { $ne: 1.99 } }, { price: { $exists: true } } ] } )
+
+$not // retorna verdadeiro se a expressão retornar falso
+Ex:
+db.inventory.find( { price: { $not: { $gt: 1.99 } } } )
+
+$nor // retorna verdadeiro se pelo menos uma das expressões for verdadeira, mas não todas
+db.inventory.find( { $nor: [ { price: 1.99 }, { sale: true } ]  } )
+
+$or // retorna verdadeiro se pelo menos uma das expressões forem verdadeiras
+db.inventory.find( { $or: [ { quantity: { $lt: 20 } }, { price: 10 } ] } )
+
+
+
+Mais operadores em: https://www.mongodb.com/docs/manual/reference/operator/query/
+
+
+
+

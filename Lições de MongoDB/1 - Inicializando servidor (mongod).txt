@@ -1,0 +1,28 @@
+No ambiente de desenvolvimento, não é necessário instalar o MongoDB como um serviço, portanto, basta 
+baixá-lo e executá-lo sem instalação.
+
+Na pasta baixada, em /bin, encontram-se três arquivos:
+  mongod - The database server.
+  mongos - Sharding router.
+  mongo  - The database shell (uses interactive javascript).
+
+Inicializando o MongoDB com o mongod:
+No windows CMD: 
+  mongod --dbpath <caminho onde os bancos de dados serão armazenados>
+
+No Windows Powershell:
+  ./mongod --dbpath <caminho onde os bancos de dados serão armazenados>
+
+Em sistemas UNIX (Linux e MacOS):
+  ./mongod --dbpath <caminho onde os bancos de dados serão armazenados>
+
+
+
+
+A porta padrão do MongoDB é a 27017.
+É possível alterá-la, caso seja interessante abrir mais de uma instância ao mesmo tempo, cada um com 
+seus bancos de dados em suas respectivas pastas (uma pasta para vários bancos de dados, sempre o 
+especificado após --dbpath).
+
+Essa aula é introdutória. Serão ensinadas coisas mais sérias como autenticação nas aulas e módulos 
+posteriores.
