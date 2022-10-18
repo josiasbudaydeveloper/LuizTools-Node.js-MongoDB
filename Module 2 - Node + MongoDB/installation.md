@@ -18,7 +18,13 @@ Open your project in a terminal/prompt, then follow this steps:
 - Open this dictory in another terminal/prompt or Powershell, then type:
 ```    
     ./mongod --dbpath <DIRECTORY OF THE DATA PATH>
-```  
+```
+4. In the application root directory, create a archive named ".env", then write there the follow:
+```
+    MONGODB_CONNECTION=mongodb://localhost:27017
+    PORT=3000
+    NODE_ENV=production
+```
 
 ## Testing
 To test this application, just follow the steps bellow:
