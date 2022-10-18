@@ -4,9 +4,9 @@ Here you will find how to install and run this project on your machine
 ## Installation
 Open your project in a terminal/prompt, then follow this steps:
 
-1. Install the Express.js framework 
+1. Install the application dependencies 
 ```
-    $ npm install express
+    $ npm install
 ```
 2. Start the application's server
 ```    
