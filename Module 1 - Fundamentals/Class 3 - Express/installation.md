@@ -16,7 +16,7 @@ Open your project in a terminal/prompt, then follow this steps:
 ## Testing
 To test this application, just follow the steps bellow:
 1. Open your browser
-2. Type **https://localhost:3000**
+2. Type **http://localhost:3000**
 3. Just test the functionalities (do a CRUD - Create, Read, Update and Delete)
 
 > What you do will not be saved, because all data are being stored in RAM memory, then it will be deleted when you close your local server
