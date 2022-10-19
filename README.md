@@ -8,7 +8,7 @@ These are the requirements for all projects
 - Node.js
 - Nodemon:
 ```
-    $ npm install -g nodemon
+$ npm install -g nodemon
 ```
 - MongoDB Community Server
 - MongoDB Compass (**Optional**)
