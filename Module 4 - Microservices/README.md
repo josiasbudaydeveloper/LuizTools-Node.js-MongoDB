@@ -16,4 +16,4 @@ Each API project has two directories:
 - /seeds - The seeds you will use to create your MongoDB collection
 - /src - The API's files
 
-> You will find more instructions in the README.md files inside */src* directories in each APIs.
+> You will find more instructions in the README.md files inside directories in each APIs.
