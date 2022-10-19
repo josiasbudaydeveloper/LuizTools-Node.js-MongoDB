@@ -12,4 +12,8 @@ The project is divided in **API Gateway**, **Cinema Catalog** and **Movies**, wh
 
 In this project, you will run all API servers and MongoDB servers in its own ports.
 
+Each API project has two directories:
+- /seeds - The seeds you will use to create your MongoDB collection
+- /src - The API's files
+
 > You will find more instructions in the README.md files inside */src* directories in each APIs.
