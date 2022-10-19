@@ -4,7 +4,7 @@ These are my projects made during my Node.js and MongoDB's certification by Luiz
 > The installation will be explained in the "README.md" files in the respective projetcs
 
 ## Requirements
-These are the requirements for all projects
+These are the requirements for all projects:
 - Node.js
 - Nodemon:
 ```
