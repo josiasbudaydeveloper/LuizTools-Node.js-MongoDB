@@ -2,28 +2,28 @@
 Here you will find how to install and run this project on your machine
 
 ## Installation
-Open your project in a terminal/prompt, then follow this steps:
+Open your project in a terminal or prompt, then follow this steps:
 
 1. Install the application dependencies 
 ```
-    $ npm install
+$ npm install
 ```
-2. Start the application's server
+2. In the application root directory, create a archive named ".env", then write there the follow:
+```
+MONGODB_CONNECTION=mongodb://localhost:27017
+PORT=3000
+NODE_ENV=production
+```
+3. Start the application's server
 ```    
-    $ npm start
+$ npm start
 ```
-3. Start the MongoDB local server
+4. Start the MongoDB local server
   
-- To do this, go to the directory of MongoDB, then access the bin dictory.
+- To do this, go to the directory of MongoDB, then access the /bin dictory.
 - Open this dictory in another terminal/prompt or Powershell, then type:
 ```    
-    ./mongod --dbpath <DIRECTORY OF THE DATA PATH>
-```
-4. In the application root directory, create a archive named ".env", then write there the follow:
-```
-    MONGODB_CONNECTION=mongodb://localhost:27017
-    PORT=3000
-    NODE_ENV=production
+$ ./mongod --dbpath <DIRECTORY OF THE DATA PATH>
 ```
 
 ## Testing
@@ -35,4 +35,4 @@ To test this application, just follow the steps bellow:
 > What you do will be saved, because all data are being stored in your MongoDB archives.
 
 ## Closing server
-To close your server, just type **Ctrl + C** both in your application and MongoDB servers. 
+To close your server, just type **Ctrl + C** both in your application and MongoDB server.
