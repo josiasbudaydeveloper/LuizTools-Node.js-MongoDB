@@ -5,7 +5,7 @@ This is the project summary
 A microservice is an application architecture where APIs (called **Microservices**) are separeted and connected with a central API called "API" Gateway, responsible to receive all 
 requests, redirect then to its respectives APIs then return the response to the client.
 
-Each API (including API Gateway) has its own MongoDB data separately to each other.
+Each API (including API Gateway) has its own MongoDB data separated to each other.
 
 ## Project division
 The project is divided in **API Gateway**, **Cinema Catalog** and **Movies**, where the first is the Gateway and the other two are the APIs connected by it.
