@@ -2,26 +2,27 @@
 Here you will find how to install and run this project on your machine
 
 ## Installation
-Open your project in a terminal/prompt, then follow this steps:
+Open your project in a terminal or prompt, then follow this steps:
 
 1. Install the application dependencies 
 ```
-    $ npm install
+$ npm install
 ```
 2. Start the application's server
 ```    
-    $ npm start
+$ npm start
 ```
 
 ## These are the routes of the application:
 ##### GET: http://localhost:3000 - Index
 
-### All routes below require login
-How?
-1. In the body of your request, create and set the Authorization property to 6d7390e4-2ab6-47d3-9c3e-80b0200386bf
-2. This is the key of the API, disponible in "data\keys.json"
-3. Now you are logged and can use the application.
-
+> **All routes below require login**
+> 
+> How?
+> 1. In the body of your request, create and set the Authorization property to 6d7390e4-2ab6-47d3-9c3e-80b0200386bf
+> 2. This is the key of the API, disponible in "data\keys.json"
+> 3. Now you are logged and can use the application.
+>
 > About the POST and PUT routes, we need to follow a scheme to pass in the validation system. 
 > 
 > All users must be and JSON with the follow values (in lowercase):
