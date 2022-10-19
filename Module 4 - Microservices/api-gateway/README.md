@@ -23,10 +23,11 @@ DATABASE=api-gateway
 $ npm start
 ```
 4. Start the MongoDB local server
+- Create an empty directory to store your database (API Gateway)
 - To do this, go to the directory of MongoDB, then access the /bin dictory.
 - Open this dictory in another terminal/prompt or Powershell, then type:
 ```    
-$ ./mongod --dbpath <DIRECTORY OF THE API GATEWAY'S DATA PATH> --port 27019
+$ ./mongod --dbpath <API GATEWAY DIRECTORY PATH> --port 27019
 ```
 - In MongoDB Compass, in Mongosh (command line), do the following comands:
 ```    
