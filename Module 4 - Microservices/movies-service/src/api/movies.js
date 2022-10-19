@@ -13,7 +13,7 @@ module.exports = (app, repository) => {
     return res.json(movies);
   });
 
-  // Returning movies by id
+  // Returning a specific movie
   app.get('/movies/:id', validateToken, async (req, res, next) => {
     const movie = await repository.getMovieById(req.params.id);
     if(!movie) return res.sendStatus(404);
