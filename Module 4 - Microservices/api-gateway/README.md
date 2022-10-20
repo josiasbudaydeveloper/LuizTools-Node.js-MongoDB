@@ -43,7 +43,7 @@ $ ./mongod --dbpath <API GATEWAY DIRECTORY PATH> --port 27019
 ```
 5. Create an index in MongoDB Compass to add automatic timout JWT key deletion
 
-Read the file Module 4 - Microservices/api-gateway/seeds/ttlBlackList.js
+Read the file **Module 4 - Microservices/api-gateway/seeds/ttlBlackList.js**
 
 ## These are the routes of the application:
 > **All API servers and MongoDB servers must be running to work!**
@@ -71,7 +71,7 @@ Read the file Module 4 - Microservices/api-gateway/seeds/ttlBlackList.js
 #### DELETE: http://localhost:4000/movies - Deleting a movie
 
 ## Testing
-To test this application, just follow the steps bellow:
+To test this application, just follow the steps below:
 1. Download a Rest Client. I recommend Httpie -> https://httpie.io/
 2. Open your Test Client and test the functionalities
 
