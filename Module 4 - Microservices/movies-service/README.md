@@ -22,7 +22,7 @@ $ npm start
 ```
 4. Start the MongoDB local server
 - Create an empty directory to store your database (Movies)
-- To do this, go to the directory of MongoDB, then access the /bin dictory.
+- Go to the directory of MongoDB, then access the /bin dictory.
 - Open this dictory in another terminal/prompt or Powershell, then type:
 ```    
 $ ./mongod --dbpath <DIRECTORY OF THE MOVIES'S DATA PATH> --port 27017

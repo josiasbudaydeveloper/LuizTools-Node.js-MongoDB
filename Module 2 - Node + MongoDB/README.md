@@ -19,8 +19,8 @@ NODE_ENV=production
 $ npm start
 ```
 4. Start the MongoDB local server
-  
-- To do this, go to the directory of MongoDB, then access the /bin dictory.
+- Create an empty directory to store your database 
+- Go to the directory of MongoDB, then access the /bin dictory.
 - Open this dictory in another terminal/prompt or Powershell, then type:
 ```    
 $ ./mongod --dbpath <DIRECTORY OF THE DATA PATH>
