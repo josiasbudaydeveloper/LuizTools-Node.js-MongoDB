@@ -8,7 +8,7 @@ Open your project in a terminal or prompt, then follow this steps:
 ```
 $ npm install
 ```
-2. In the application root directory, create a archive named ".env", then write there the follow:
+2. In the application root directory, create an archive named ".env", then write there the follow:
 ```
 MONGODB_CONNECTION=mongodb://localhost:27018
 DATABASE=cinema-catalog-service
@@ -27,7 +27,7 @@ $ npm start
 ```    
 $ ./mongod --dbpath <DIRECTORY OF THE CINEMA CATALOG'S DATA PATH> --port 27018
 ```
-5. Go to Module 4 - Microservices\cinema-catalog-service\seeds then copy it's content
+5. Go to Module 4 - **Module 4 - Microservices\cinema-catalog-service\seeds\cinemaCatalog.json** then copy it's content
 6. In MongoDB Compass, in Mongosh (command line), do the following comands:
 ```    
 > use cinema-catalog-service
