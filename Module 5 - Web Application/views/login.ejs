@@ -1,0 +1,32 @@
+<%- include('./partial-views/top') %>
+
+<form action="/" method="POST">
+  <div class="form-group">
+    <label for="username">Username:</label>
+    <input type="text" name="username" id="username" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="password">Password: </label>
+    <input type="password" name="password" id="password" class="form-control">
+  </div>
+  <br>
+  <input type="submit" name="Login" value="Login" class="btn btn-primary">
+</form>
+
+<% if (message) { %>
+  <p>
+    <% if (err) { %>
+      <div class="alert alert-danger">
+    <% } else { %>
+      <div class="alert alert-success">
+    <% } %>
+      <%= message %>
+    </div>  
+  </p>
+<% } %>
+
+<p>
+  <a href="/users/forgot">Forgot password?</a> | <a href="/users/signup">Create account</a>
+</p>
+
+<%- include('./partial-views/bottom') %>

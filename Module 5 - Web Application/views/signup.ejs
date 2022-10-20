@@ -1,0 +1,37 @@
+<%- include('./partial-views/top') %>
+
+<form action="/users/signup" method="POST">
+  <div class="form-group">
+    <label for="username">Username:</label>
+    <input type="text" name="username" id="username" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="text" name="email" id="email" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password"  class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="profile">Profile:</label>
+    <select name="profile" id="profile" class="form-select">
+      <option value="1">Administrator</option>
+      <option value="2">User</option>
+    </select>
+  </div>
+  <br>
+  <input type="submit" value="Sign Up" class="btn btn-primary">
+</form>
+
+<br>
+<a href="/">Cancel</a>
+
+<% if (message) { %>
+  <div class="alert alert-danger">
+    <%= message %>
+  </div>
+  </p>
+<% } %>
+
+<%- include('./partial-views/bottom') %>

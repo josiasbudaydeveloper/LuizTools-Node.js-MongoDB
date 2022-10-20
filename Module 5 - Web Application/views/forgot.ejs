@@ -1,0 +1,17 @@
+<%- include('./partial-views/top') %>
+
+<p>Enter the registration email below to obtain your access credentials</p>
+<form action="/users/forgot" method="POST">
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" class="form-control">
+  </div>
+  <br>
+  <input type="submit" value="send" class="btn btn-primary">
+</form>
+<br>
+<p>
+  If you don't have an account: <a href="/users/signup">Create Account</a>
+</p>
+
+<%- include('./partial-views/bottom') %>

@@ -1,0 +1,56 @@
+<%- include('./partial-views/top') %>
+
+<p>Welcome to <%= title %></p>
+<div class="alert alert-info">
+  <b>Total:</b> <%= qtt %> users
+</div>
+
+<table class="table table-bordered table-striped table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th>Name</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody class="table-light">
+    <% if (users) {
+      for (let user of users) {
+    %>
+      <tr>
+        <td><a href="/users/edit" title="Edit"><%= user.username %></a></td>
+        <td>
+          <form action="/users/delete" method="POST">
+            <input type="hidden" name="id" value="<%= user._id %>">
+            <input type="submit" value="X" title="Delete" style="cursor: pointer"
+              onclick="return confirm('Are you sure?')" class="btn btn-danger">
+          </form>
+        </td>
+      </tr>
+    <% }} %>
+  </tbody>
+
+  <tfoot>
+    <tr>
+      <td colspan="2">
+        <nav>
+          <ul class="pagination">
+            <% for (let i = 1; i <= qttPages; i++) { %>
+              <a href="/index/<%= i %>" class="page-link"><%= i %></a>
+            <% } %>
+          </ul>
+        </nav>
+      </td>
+    </tr>
+  </tfoot>
+</table>
+
+<p>
+  <a href="/users/signup">Create User</a> | <a href="/logout">Logout</a> |
+
+  <% if (profile === 1) { %>
+    <a href="/reports">Go to reports</a>
+  <% } %>
+</p>
+
+<%- include('./partial-views/bottom') %>
