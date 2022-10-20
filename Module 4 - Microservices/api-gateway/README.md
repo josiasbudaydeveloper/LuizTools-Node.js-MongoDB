@@ -8,7 +8,7 @@ Open your project in a terminal or prompt, then follow this steps:
 ```
 $ npm install
 ```
-2. In the application root directory, create a archive named ".env", then write there the follow:
+2. In the application root directory, create an archive named ".env", then write there the follow:
 ```
 MOVIES_API=http://localhost:3000
 CINEMA_CATALOG_API=http://localhost:3001
