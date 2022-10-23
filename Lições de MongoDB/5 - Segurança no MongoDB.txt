@@ -1,0 +1,52 @@
+1ª Dica: não subir o servidor MongoDB na porta padrão 27017, pois atacantes sempre começam por esta
+
+Criando super usuário:
+  > use admin
+  > db.createUser({
+    user: <usuario>,
+    pwd: <senha>,
+    roles: [
+        { 
+          role: "userAdminAnyDatabase",
+          db: "admin"
+        }
+      ]
+    });
+
+Criando usuário com poder exclusivo de um único banco de dados 
+(de uma única aplicação):
+  > use <nome do banco>
+  > db.createUser({
+    user: <usuario>,
+    pwd: <senha>,
+    roles: [
+        { 
+          role: "dbOwner",
+          db: <nome do banco>
+        }
+      ]
+    });
+
+Para que a autenticação funcione, será necessário reiniciar o MongoDB com o parâmetro --auth, ex:
+  $ ./mongod --data "DIRETÓRIO DOS DADOS" --port <porta> --auth
+
+Para se conectar ao servidor é agora necessário entrar com usuário e senha. 
+Caso o login seja feito com um super usuário:
+  ex:
+  - Mongo:
+    $ ./mongod --port 27018 -u <usuario> -p <senha>
+
+  - String de Conexão:
+  Entrar com a seguinte URL:
+    mongodb://<usuario>:<senha>@<host>:<porta>
+
+Caso o login seja feito com um usuário exclusivo de um único Banco de dados
+  ex:
+  - Mongo:
+    $ ./mongod --port 27018 -u <usuario> -p <senha> -authenticationDatabase <nome do Banco de Dados>
+
+  - String de Conexão:
+  Entrar com a seguinte URL:
+    mongodb://<usuario>:<senha>@<host>:<porta>/<nome do Banco de Dados>
+
+Obs.: a url de conexão usa URL enconde, ou seja, certos caracteres requerem codificação
