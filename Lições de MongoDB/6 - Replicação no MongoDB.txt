@@ -1,0 +1,45 @@
+Replicação no MongoDB se faz com Replica Set, que é quando um servidor MongoDB central (master) é
+conectado aos servidores MongoDB secundários (slaves), onde o master é o único com poder de gravação e os
+slaves funcionam como servidores de redundância e permitem somente leitura. Em caso de perda de conexão
+o master, um dos slaves será automaticamente transformado em master.
+
+Funciona assim:
+- Iniciar o servidor MongoDB com o parâmetro --replSet <nome da réplica>. Ex:
+  $ ./mongod --dbpath >caminho dos dados> --port <porta> --replSet "rs0"
+
+- Abrir um utilitário mongo e criar um novo réplica set. Ex:
+  $ ./mongo --port <porta do master>
+  $ rs.initiate(
+      {
+        _id: "rs0", 
+        version: 1, 
+        members: [
+          {_id: 0, 
+          host: "localhost:27018", 
+          priority: 1000
+          },
+          {_id: 1, 
+          host: "localhost:27017", 
+          priority: 50}
+        ]
+      }
+    );
+
+Controle de falhas:
+No Node.js, podemos alterar a connection string para que, caso um host falhe, seja
+possível se conectar a outros, ex:
+  mongodb://
+    user:password@
+    localhost:27017,localhost:27018,localhost27019
+    /?replicaSet=<nome do replica set>&
+    authSource=<nome do banco de autenticação>
+
+Caso haja autenticação (o que no ambiente de produção é necessário), será necessário utilizar uma
+chave (key) de autenticação na inicialização dos servidores de MongoDB.
+- Criando a chave:
+  $ openssl rand -base64 756 > "Caminho do arquivo (não requer extensão)"
+- Alterando as permissões de arquivo:
+  $ chmod 400 "Caminho do arquivo"
+- Iniciando cada um dos servidores MongoDB do replica set com autenticação e chave de autenticação:
+  $ ./mongod --port <porta> --dbpath <caminho dos dados>
+    --auth --keyFile <caminho da chave de autenticação>
