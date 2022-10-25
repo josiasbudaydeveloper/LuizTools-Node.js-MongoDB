@@ -5,7 +5,7 @@ o master, um dos slaves será automaticamente transformado em master.
 
 Funciona assim:
 - Iniciar o servidor MongoDB com o parâmetro --replSet <nome da réplica>. Ex:
-  $ ./mongod --dbpath >caminho dos dados> --port <porta> --replSet "rs0"
+  $ ./mongod --dbpath <caminho dos dados> --port <porta> --replSet "rs0"
 
 - Abrir um utilitário mongo e criar um novo réplica set. Ex:
   $ ./mongo --port <porta do master>
