@@ -3,11 +3,16 @@ conectado aos servidores MongoDB secundários (slaves), onde o master é o únic
 slaves funcionam como servidores de redundância e permitem somente leitura. Em caso de perda de conexão
 o master, um dos slaves será automaticamente transformado em master.
 
+É necessário no mínimo três instâncias de MongoDB em um Replica Set, porque são necessários no mínimo 2
+servidores ativos para que haja a eleição do novo master, em caso de perda do master anterior.
+
 Funciona assim:
 - Iniciar o servidor MongoDB com o parâmetro --replSet <nome da réplica>. Ex:
   $ ./mongod --dbpath <caminho dos dados> --port <porta> --replSet "rs0"
 
 - Abrir um utilitário mongo e criar um novo réplica set. Ex:
+Obs.: dos parâmetros abaixo, o "priority" é opcional e define a regra de eleição, ou seja,
+      caso seja interessante estabelecer uma ordem, por quaisquer que sejam os motivos.
   $ ./mongo --port <porta do master>
   $ rs.initiate(
       {
