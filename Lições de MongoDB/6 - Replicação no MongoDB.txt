@@ -1,3 +1,4 @@
+INTRODUÇÃO
 Replicação no MongoDB se faz com Replica Set, que é quando um servidor MongoDB central (master) é
 conectado aos servidores MongoDB secundários (slaves), onde o master é o único com poder de gravação e os
 slaves funcionam como servidores de redundância e permitem somente leitura. Em caso de perda de conexão
@@ -6,6 +7,7 @@ o master, um dos slaves será automaticamente transformado em master.
 É necessário no mínimo três instâncias de MongoDB em um Replica Set, porque são necessários no mínimo 2
 servidores ativos para que haja a eleição do novo master, em caso de perda do master anterior.
 
+INICIALIZAÇÃO
 Funciona assim:
 - Iniciar o servidor MongoDB com o parâmetro --replSet <nome da réplica>. Ex:
   $ ./mongod --dbpath <caminho dos dados> --port <porta> --replSet "rs0"
@@ -37,7 +39,7 @@ Obs.: dos parâmetros abaixo, o "priority" é opcional e define a regra de elei�
       }
     );
 
-Controle de falhas:
+CONTROLE DE FALHAS
 No Node.js, podemos alterar a connection string para que, caso um host falhe, seja
 possível se conectar a outros, ex:
   mongodb://
@@ -55,3 +57,15 @@ chave (key) de autenticação na inicialização dos servidores de MongoDB.
 - Iniciando cada um dos servidores MongoDB do replica set com autenticação e chave de autenticação:
   $ ./mongod --port <porta> --dbpath <caminho dos dados>
     --auth --keyFile <caminho da chave de autenticação>
+ 
+ LEITURA EM SERVIDOR SLAVE
+ Obs.: para que seja possível a leitura em um servidor slave, é necessário digitar o seguinte comando:
+    $ db.getMongo().setReadPref("primaryPreferred")
+    
+ ADICIONANDO NOVOS SERVIDORES AO REPLICA SET:
+ Contectado ao servidor primário no Mongosh:
+   $  rs.add({
+        _id: <novo id>, 
+        host: <novo host>, 
+        priority: <prioridade> (campo opcional>
+       })
