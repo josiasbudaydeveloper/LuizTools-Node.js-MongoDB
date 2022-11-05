@@ -1,5 +1,5 @@
 # LuizTools-Node.js-MongoDB
-These are my projects made during my Node.js and MongoDB's certification by LuizTools.
+These are my projects made during my Node.js and MongoDB course by LuizTools.
 
 > The installation will be explained in the "README.md" files in the respective projetcs
 
