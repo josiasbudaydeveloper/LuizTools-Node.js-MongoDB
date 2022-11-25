@@ -83,6 +83,6 @@ To test this application, just follow the steps below:
 > In total, will be 3 terminals/prompts or Powershell tabs for the three API's (Gateway, Cinema Catalog and Movies) more 3 for it's respectives MongoDB Servers.
 >
 > This is necessary to simulate an Microservice architecture, where the API's are separeted from each other and each has it's own MongoDB servers separeted too.
-> So **don't close** this server until you test the all applications and MongoDB server running.
+> So **don't close** this server until you test all applications and MongoDB server running.
 
 To close your server, just type **Ctrl + C** both in your application and MongoDB server.
