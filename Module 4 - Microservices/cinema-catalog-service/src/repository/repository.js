@@ -12,6 +12,12 @@ async function getAllCities() {
     .toArray();
 }
 
+/**
+* getMoviesByCinemaId - Returns a list of movies being shown in a specific cinema
+*
+* @param {string} cinemaId - ID of the cinema
+* @return {Array} - Array of objects with the movie ID and title
+*/
 async function getCinemasByCityId(cityId) {
   const objectCityId = ObjectID(cityId);
   const db = await database.connect();
