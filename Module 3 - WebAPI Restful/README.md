@@ -25,7 +25,7 @@ $ npm start
 >
 > About the POST and PUT routes, we need to follow a scheme to pass in the validation system. 
 > 
-> All users must be and JSON with the follow values (in lowercase):
+> All users must be and JSON with the following values (in lowercase):
 > - name
 > - age
 > - uf (state)
